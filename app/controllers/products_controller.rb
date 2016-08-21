@@ -2,9 +2,7 @@ class ProductsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    binding.pry
     @products = current_user.products
-
   end
 
   def show
@@ -12,7 +10,9 @@ class ProductsController < ApplicationController
   end
 
   def create
-    binding.pry
+    @product = current_user.products.create(product_params)
+
+    redirect_to inventory_path
   end
 
   private
