@@ -3,6 +3,7 @@ class InventoriesController < ApplicationController
 
   def index
     @inventory = current_user.inventory
-    binding.pry
+
+    # if inventory is empty aka nil, it will return as "null"
   end
 end
