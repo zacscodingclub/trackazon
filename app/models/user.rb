@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-  has_one :inventory
-  
+  has_many :products
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   # Include default devise modules. Others available are:
