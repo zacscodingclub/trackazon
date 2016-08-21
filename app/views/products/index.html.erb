@@ -1,14 +1,17 @@
-<h1>Inventory</h1>
-<div class="row">
-  <%= display_inventory(@products) %>
-</div>
-
-<div class="row col-md-6">
-  <div class="card card-outline-primary">
-    <div class="card-block">
-      <p>Add a Product:</p>
-      <%= render 'form' %>
-    </div>
+<div ui-view>    
+  </div>
+  <h1>Inventory</h1>
+  <div class="row">
+    <%= display_inventory(@products) %>
   </div>
 
+  <div class="row col-md-6">
+    <div class="card card-outline-primary">
+      <div class="card-block">
+        <p>Add a Product:</p>
+        <%= render 'form' %>
+      </div>
+    </div>
+
+  </div>
 </div>

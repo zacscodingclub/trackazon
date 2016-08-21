@@ -3,7 +3,7 @@
 //= require tether
 //= require bootstrap
 //= require angular
+//= require angular-ui-router
 //= require angular-resource
 //= require angular-rails-templates
-//= require turbolinks
 //= require_tree .
