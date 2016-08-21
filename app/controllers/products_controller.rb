@@ -6,18 +6,24 @@ class ProductsController < ApplicationController
 
     respond_to do |f|
       f.html { render :index }
-      f.json { render json: @products}
+      f.json { render json: @products }
     end
   end
 
   def show
     @product = Product.find(params[:id])
+
+    respond_to do |f|
+      f.json { render json: @product }
+    end
   end
 
   def create
     @product = current_user.products.create(product_params)
 
-    redirect_to inventory_path
+    respond_to do |f|
+      f.json { render json: @product }
+    end
   end
 
   private
