@@ -3,6 +3,11 @@ class ProductsController < ApplicationController
 
   def index
     @products = current_user.products
+
+    respond_to do |f|
+      f.html { render :index }
+      f.json { render json: @products}
+    end
   end
 
   def show
