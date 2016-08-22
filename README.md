@@ -5,14 +5,12 @@ This is a simple and straightforward application which allows a user to track va
 ## To-Do
 ~~1. Basic UI Setup~~
 ~~2. User Login system~~
-3. Build out Product class
-  * Validations
-  * Routes
-
-4. Build out Inventory join table
-  ~~* migration~~
-  * Test associations
+~~3. Build out Product class~~
+  ~~* Validations~~
+  ~~* Routes~~
 
 5. Add Angular
-  * Add gem
-  * Attach to inventories#index view
+  ~~* Add gems~~
+  ~~* Attach to products#index view~~
+  ~~* Setup service to interact with back end~~
+  ~~* Display products in table~~

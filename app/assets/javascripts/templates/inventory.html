@@ -15,8 +15,8 @@
       <tbody>
         <tr ng-repeat="product in inventory.products">
           <th>{{ product.name }}</th>
-          <th>{{ product.item_price }}</th>
-          <th>{{ product.sell_price }}</th>
+          <th>{{ product.item_price | currency }}</th>
+          <th>{{ product.sell_price | currency }}</th>
           <th>{{ product.quantity }}</th>
           <th>{{ product.quantity_sold }}</th>
           <th>Angular Binding to calculate profit</th>
