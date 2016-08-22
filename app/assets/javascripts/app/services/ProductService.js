@@ -6,6 +6,10 @@ function ProductService($http) {
   this.getProduct = function(id) {
     return $http.get('/products/' + id + '.json')
   }
+
+  this.postProduct = function(data) {
+    return $http.post('/products.json', data);
+  }
 }
 
 angular
