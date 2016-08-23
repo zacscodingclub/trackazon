@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = current_user.products.create(product_params)
-    
+
     respond_to do |f|
       f.json { render json: @product }
     end

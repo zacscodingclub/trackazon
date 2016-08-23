@@ -1,6 +1,6 @@
 function ProductService($http) {
   this.getProducts = function() {
-    return $http.get('/inventory.json')
+    return $http.get('/products.json')
   }
 
   this.getProduct = function(id) {
