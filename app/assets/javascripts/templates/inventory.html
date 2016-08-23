@@ -1,25 +1,27 @@
 <h1>Inventory</h1>
 <div class="card card-outline-secondary">
   <div class="card-block">
-    <table class="table">
+    <table class="table table-sm">
       <thead>
-        <tr>
+        <tr class="bg-primary">
           <th>Product Name</th>
           <th>Purchase Price</th>
           <th>Selling Price</th>
           <th>Quantity Purchased</th>
           <th>Quantity Sold</th>
+          <th>In Stock</th>
           <th>Profit</th>
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="product in inventory.products">
+        <tr ng-repeat="product in inventory.products" id="{{ product.id }}">
           <th>{{ product.name }}</th>
           <th>{{ product.item_price | currency }}</th>
           <th>{{ product.sell_price | currency }}</th>
           <th>{{ product.quantity }}</th>
-          <th>{{ product.quantity_sold }}</th>
-          <th>Angular Binding to calculate profit</th>
+          <th><input type="number" class="form-control" min:"{{ product.quantity_sold }}" max="{{product.quantity}}" value="{{ product.quantity_sold }}" style="width:100px;"></th>
+          <th>{{ product.quantity - product.quantity_sold }}</th>
+          <th>{{ (product.sell_price - product.item_price) * product.quantity_sold | currency }}</th>
         </tr>
       </tbody>
     </table>
