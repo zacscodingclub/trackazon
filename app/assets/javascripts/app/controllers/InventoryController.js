@@ -3,13 +3,6 @@ function InventoryController($scope, inventory, ProductService) {
   ctrl.products = inventory.data;
   ctrl.newProduct = {};
 
-  ctrl.products.forEach(addInStockAndProfit);
-
-  function addInStockAndProfit(product) {
-    product.inStock = product.quantity - product.quantity_sold;
-    product.profit = ( product.sell_price - product.item_price) * product.quantity_sold;
-  }
-
   ctrl.addNewProduct = function() {
     ProductService.postProduct(ctrl.newProduct)
       .then(function(response) {

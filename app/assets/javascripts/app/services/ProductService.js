@@ -10,6 +10,10 @@ function ProductService($http) {
   this.postProduct = function(data) {
     return $http.post('/products.json', data);
   }
+
+  this.updateQuantity = function(data) {
+    debugger;
+  }
 }
 
 angular
