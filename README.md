@@ -14,3 +14,4 @@ This is a simple and straightforward application which allows a user to track va
   ~~* Attach to products#index view~~
   ~~* Setup service to interact with back end~~
   ~~* Display products in table~~
+  * User Filter for currency amounts
