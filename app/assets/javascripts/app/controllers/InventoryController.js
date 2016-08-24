@@ -1,10 +1,10 @@
 function InventoryController($scope, inventory, ProductService) {
   var ctrl = this;
   ctrl.products = inventory.data;
-  ctrl.newProduct = {};
+  ctrl.product = {};
 
   ctrl.addNewProduct = function() {
-    ProductService.postProduct(ctrl.newProduct)
+    ProductService.postProduct($scope.product)
       .then(function(response) {
         ctrl.products.push(response.data);
         ctrl.newProduct = {}

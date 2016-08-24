@@ -22,7 +22,7 @@ angular
         scope.$watch(function() {
           return scope.quantitySold;
         }, function(newValue, oldValue) {
-
+          debugger;
           // ProductService.updateQuantity();
           scope.inStock = setInStock(scope);
           scope.profit = setProfit(scope);
