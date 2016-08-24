@@ -1,0 +1,8 @@
+<th>{{ name }}</th>
+<th>{{ itemPrice | currency }}</th>
+<th>{{ sellPrice | currency }}</th>
+<th>{{ quantity }}</th>
+<th><input type="number" class="form-control" min="{{ quantitySold }}" max="{{ quantity }}"
+      style="width:100px;" ng-model="quantitySold"></th>
+<th>{{ inStock }}</th>
+<th>{{ profit | currency }}</th>

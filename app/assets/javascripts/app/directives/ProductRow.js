@@ -5,9 +5,20 @@ function ProductRow() {
       itemPrice: '=',
       sellPrice: '=',
       quantity: '=',
-      quantitySold: '='
+      quantitySold: '=',
+      inStock: '=',
+      profit: '=',
     },
-    templateUrl: 'product.html'
+    templateUrl: 'productRow.html',
+    link: function (scope, element, attrs, ctrl) {
+      var el = element[0];
+      var input = el.querySelector('input');
+
+      input.addEventListener('change', function(e) {
+        debugger;
+      });
+
+    }
   }
 }
 

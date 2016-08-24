@@ -1,8 +1,0 @@
-<th>{{ name }}</th>
-<th>{{ itemPrice | currency }}</th>
-<th>{{ sellPrice | currency }}</th>
-<th>{{ quantity }}</th>
-<th><input type="number" class="form-control" min:"{{ quantitySold }}" max="{{quantity}}"
-      ng-value="{{ quantitySold }}" style="width:100px;" ng-change="inventory.updateProducts(this.product)" ng-model="numSold"></th>
-<th>{{ quantity - quantitySold }}</th>
-<th>{{ (sellPrice - itemPrice) * quantitySold | currency }}</th>
