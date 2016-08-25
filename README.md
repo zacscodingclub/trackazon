@@ -16,3 +16,8 @@ This is a simple and straightforward application which allows a user to track va
   ~~* Display products in table~~
   ~~* User Filter for currency amounts~~
   ~~* Show updates to in stock and profit values on quantity sold change~~
+  ~~* New Product form Validations~~
+    ~~* Name: required, length > 5~~
+    ~~* Item Cost: required, numbers~~
+    ~~* Sell Price: required, numbers~~
+    ~~* Quantity: required, numbers~~
