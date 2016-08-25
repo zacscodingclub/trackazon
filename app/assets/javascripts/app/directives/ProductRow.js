@@ -3,6 +3,7 @@ angular
   .directive('productRow', ['ProductService', function(ProductService) {
     return {
       scope: {
+        itemId:'=',
         name: '=',
         itemPrice: '=',
         sellPrice: '=',
@@ -22,10 +23,18 @@ angular
         scope.$watch(function() {
           return scope.quantitySold;
         }, function(newValue, oldValue) {
-          debugger;
-          // ProductService.updateQuantity();
-          scope.inStock = setInStock(scope);
-          scope.profit = setProfit(scope);
+          var data = {
+            'id': scope.itemId,
+            'value': newValue
+          }
+
+          ProductService.updateQuantitySold(data)
+            .then(function(response) {
+              scope.inStock = setInStock(scope);
+              scope.profit = setProfit(scope);
+            }, function(error) {
+              console.log("Error occurred: " + error);
+            });
         })
       }
     }

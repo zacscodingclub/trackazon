@@ -14,4 +14,5 @@ This is a simple and straightforward application which allows a user to track va
   ~~* Attach to products#index view~~
   ~~* Setup service to interact with back end~~
   ~~* Display products in table~~
-  * User Filter for currency amounts
+  ~~* User Filter for currency amounts~~
+  ~~* Show updates to in stock and profit values on quantity sold change~~

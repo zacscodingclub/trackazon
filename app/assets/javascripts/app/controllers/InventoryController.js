@@ -3,12 +3,16 @@ function InventoryController($scope, inventory, ProductService) {
   ctrl.products = inventory.data;
   ctrl.product = {};
 
+  $scope.rowClass = function(product) {
+    return product.inStock === 0 ? "table-active" : "";
+  }
+  
   ctrl.addNewProduct = function() {
     ProductService.postProduct($scope.product)
       .then(function(response) {
         ctrl.products.push(response.data);
-        ctrl.newProduct = {}
-        $scope.form.$setPristine();
+        $scope.product = {};
+        $scope.newProductForm.$setPristine();
       },function(error) {
         console.log("Error occurred: " + error);
       });

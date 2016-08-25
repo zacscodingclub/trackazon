@@ -1,4 +1,15 @@
-<h1>Inventory</h1>
+<div class="row">
+  <div class="col-sm-4">
+    <h1>Inventory</h1>
+  </div>
+  <div class="col-sm-4 offset-sm-4">
+    <div class="btn-group pull-xs-right" role="group">
+      <a class="btn btn-secondary" ng-click="product.inStock = !product.inStock">Out of Stock</a>
+      <a class="btn btn-primary">In Stock</a>
+    </div>
+  </div>
+</div>
+
 <div class="card card-outline-secondary">
   <div class="card-block">
     <table class="table table-sm">
@@ -14,7 +25,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr product-row ng-repeat="product in inventory.products" id="{{ product.id }}" name="product.name"
+        <tr product-row ng-repeat="product in inventory.products" ng-class="rowClass(product)" ng-show="product.inStock"
+                     id="{{ product.id }}"
+                     item-id="product.id"
+                     name="product.name"
                      item-price="product.item_price"
                      sell-price="product.sell_price"
                      quantity="product.quantity"
@@ -35,7 +49,19 @@
         <div class="form-group row">
           <label for="name" class="col-xs-3 col-form-label">Name</label>
           <div class="col-xs-8 offset-xs-1">
-            <input type="text" class="form-control" placeholder="Product Name" id="name" ng-model="product.name">
+            <input type="text"
+                   name="name"
+                   class="form-control"
+                   placeholder="Product Name"
+                   id="name"
+                   ng-model="product.name"
+                   ng-minlength="5"
+                   required />
+
+            <div ng-messages="newProductForm.name.$error" ng-if="newProductForm.name.$touched" style="color:maroon" role="alert">
+              <div ng-message="required">Product name is required!</div>
+              <div ng-message="minlength">Must be more than 5 characters!</div>
+            </div>
           </div>
         </div>
 

@@ -11,8 +11,8 @@ function ProductService($http) {
     return $http.post('/products.json', data);
   }
 
-  this.updateQuantity = function(data) {
-    debugger;
+  this.updateQuantitySold = function(data) {
+    return $http.put('/products/' + data.id + '.json', data.value);
   }
 }
 

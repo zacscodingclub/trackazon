@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :products, only: [:index, :show, :create]
+  resources :products, only: [:index, :show, :create, :update]
   get '/' => 'products#index', as: 'inventory'
   devise_for :users
 

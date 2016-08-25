@@ -26,6 +26,16 @@ class ProductsController < ApplicationController
     end
   end
 
+  def update
+    @product = Product.find(params[:id])
+
+    @product.update(quantity_sold: params[:_json] )
+
+    respond_to do |f|
+      f.json { render json: @product }
+    end
+  end
+
   private
     def product_params
       params.require(:product).permit(:name, :item_price, :sell_price, :quantity)
