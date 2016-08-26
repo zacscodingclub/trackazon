@@ -6,7 +6,34 @@ Trackazon is a user friendly way to keep some basic info on the items a user has
 
 This is my final project for the [Flatiron School's Learn Verified Program](http://learn.co/with/zacscodingclub).
 
+## Want to check it out?
+For now, you'll have to add this code locally and spin up a Rails server.  To do that, follow the instructions below:
+
+```ruby
+  # Move to your code directory, I am using a default in the example
+  # but you can use any  directory.
+  cd ~/Development/code
+
+  # Clone the project code
+  git clone git@github.com:zacscodingclub/trackazon.git
+
+  # Move into the new directory we just cloned
+  cd trackazon
+
+  # Install the necessary gems
+  bundle install
+
+  # Seed with some sample data
+  rake db:migrate
+
+  # Startup the server
+  rails s
+
+  # Visit the webpage in your browser at localhost:3000
+```
+
 ## To-Do
+1. Upload to Heroku
 
 ## Done
 1. Basic UI Setup
