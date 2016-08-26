@@ -1,0 +1,30 @@
+<div class="card card-outline-secondary">
+  <div class="card-block">
+    <table class="table table-sm">
+      <thead>
+        <tr class="bg-primary">
+          <th>Product Name</th>
+          <th>Purchase Price</th>
+          <th>Selling Price</th>
+          <th>Quantity Purchased</th>
+          <th>Quantity Sold</th>
+          <th>In Stock</th>
+          <th>Profit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr product-row ng-repeat="product in inventory.products" ng-class="rowClass(product)" ng-show="product.inStock"
+                     id="{{ product.id }}"
+                     item-id="product.id"
+                     name="product.name"
+                     item-price="product.item_price"
+                     sell-price="product.sell_price"
+                     quantity="product.quantity"
+                     quantity-sold="product.quantity_sold"
+                     in-stock="product.inStock"
+                     profit="product.profit">
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

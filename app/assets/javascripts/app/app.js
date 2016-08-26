@@ -4,13 +4,17 @@ angular
       $stateProvider
         .state('inventory', {
           url: '/inventory',
-          templateUrl: 'inventory.html',
+          templateUrl: 'products/index.html',
           controller: 'InventoryController as inventory',
           resolve: {
             inventory: function(ProductService) {
               return ProductService.getProducts();
             }
           }
+        })
+        .state('new', {
+          url: '/new',
+          templateUrl: 'products/new.html',
         })
         .state('about', {
           url: '/about',
@@ -19,6 +23,16 @@ angular
         .state('contact', {
           url:'/contact',
           templateUrl: 'contact.html'
+        })
+        .state('user', {
+          url:'/user',
+          templateUrl: 'users/show.html',
+          controller: 'UserController as ctrl',
+          resolve: {
+            user: function(UserService) {
+              return UserService.getUser();
+            }
+          }
         })
 
       $urlRouterProvider.otherwise('/');
