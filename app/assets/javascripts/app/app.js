@@ -3,7 +3,7 @@ angular
     .config(function($stateProvider, $urlRouterProvider) {
       $stateProvider
         .state('inventory', {
-          url: '/inventory',
+          url: '/',
           templateUrl: 'products/index.html',
           controller: 'InventoryController as inventory',
           resolve: {
