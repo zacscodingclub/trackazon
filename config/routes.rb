@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   root 'pages#index'
   resources :products, only: [:index, :show, :create, :update]
-  get '/i' => 'products#index', as: 'inventory'
   devise_for :users
 
   resources :users, only:[:index]

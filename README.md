@@ -33,7 +33,8 @@ For now, you'll have to add this code locally and spin up a Rails server.  To do
 ```
 
 ## To-Do
-1. Upload to Heroku
+1. Bootstrap login forms
+2. Deploy to Heroku
 
 ## Done
 1. Basic UI Setup

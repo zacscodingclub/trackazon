@@ -36,7 +36,7 @@
                    ng-pattern="/^\d{0,9}(\.\d{1,9})?$/">
 
              <div ng-messages="newProductForm.itemPrice.$error" ng-if="newProductForm.itemPrice.$touched" style="color:maroon" role="alert">
-               <div ng-message="required">Your purchase price is required.</div>
+               <div ng-message="required">Purchase price is required.</div>
                <div ng-message="pattern">That's not a valid number.</div>
              </div>
           </div>

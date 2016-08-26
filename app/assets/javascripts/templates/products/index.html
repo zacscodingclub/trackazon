@@ -14,4 +14,88 @@
 
 <div ng-include src="'products/table.html'"></div>
 
-<div ng-include src="'products/new.html'"></div>
+<div class="row col-md-6">
+  <div class="card card-outline-secondary">
+    <div class="card-block">
+      <p>Add a Product:</p>
+      <form name="newProductForm" novalidate ng-submit="newProductForm.$valid && inventory.addNewProduct()">
+        <div class="form-group row">
+          <label for="name" class="col-xs-3 col-form-label">Name</label>
+          <div class="col-xs-8 offset-xs-1">
+            <input type="text"
+                   name="name"
+                   class="form-control"
+                   placeholder="Product Name"
+                   id="name"
+                   ng-model="product.name"
+                   ng-minlength="5"
+                   required />
+
+            <div ng-messages="newProductForm.name.$error" ng-if="newProductForm.name.$touched" style="color:maroon" role="alert">
+              <div ng-message="required">Product name is required.</div>
+              <div ng-message="minlength">Must be more than 5 characters.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="item_price" class="col-xs-3 col-form-label">Item Cost</label>
+          <div class="col-xs-8 offset-xs-1">
+            <input type="text"
+                   class="form-control"
+                   placeholder="How much did it cost?"
+                   id="item_price"
+                   name="itemPrice"
+                   ng-model="product.item_price"
+                   required
+                   ng-pattern="/^\d{0,9}(\.\d{1,9})?$/">
+
+             <div ng-messages="newProductForm.itemPrice.$error" ng-if="newProductForm.itemPrice.$touched" style="color:maroon" role="alert">
+               <div ng-message="required">Purchase price is required.</div>
+               <div ng-message="pattern">That's not a valid number.</div>
+             </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="sell_price" class="col-xs-3 col-form-label">Sell Price</label>
+          <div class="col-xs-8 offset-xs-1">
+            <input type="text"
+                   class="form-control"
+                   placeholder="How much are you selling it for?"
+                   id="sell_price"
+                   name="sellPrice"
+                   ng-model="product.sell_price"
+                   required
+                   ng-pattern="/^\d{0,9}(\.\d{1,9})?$/">
+
+            <div ng-messages="newProductForm.sellPrice.$error" ng-if="newProductForm.sellPrice.$touched" style="color:maroon" role="alert">
+              <div ng-message="required">Selling price is required.</div>
+              <div ng-message="pattern">That's not a valid number.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="quantity" class="col-xs-3 col-form-label">Quantity</label>
+          <div class="col-xs-8 offset-xs-1">
+            <input type="number"
+                   class="form-control"
+                   min:"1" max="10000"
+                   id="quantity"
+                   name="quantity"
+                   ng-model="product.quantity"
+                   required
+                   ng-pattern="/^[0-9]{1,7}$/" />
+            <div ng-messages="newProductForm.quantity.$error" ng-if="newProductForm.quantity.$touched" style="color:maroon" role="alert">
+              <div ng-message="required">Quantity is required.</div>
+              <div ng-message="pattern">That's not a valid number.</div>
+            </div>
+          </div>
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Add Product">
+      </form>
+    </div>
+  </div>
+</div>
