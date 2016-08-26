@@ -1,7 +1,6 @@
 function InventoryController($scope, inventory, ProductService) {
   var ctrl = this;
   ctrl.products = inventory.data;
-  ctrl.product = {};
 
   $scope.rowClass = function(product) {
     return product.inStock === 0 ? "table-active" : "";

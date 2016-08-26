@@ -35,6 +35,10 @@ For now, you'll have to add this code locally and spin up a Rails server.  To do
 ## To-Do
 1. Bootstrap login forms
 2. Deploy to Heroku
+3. Answer these questions:
+  * Why does it request products.json for every request?
+  * Why does $scope.$watch need to request each product for each inventory page load?
+  * Why doesn't the partial form using ng-include actually pass any data?
 
 ## Done
 1. Basic UI Setup
