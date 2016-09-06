@@ -3,13 +3,12 @@
     <h1>Inventory</h1>
   </div>
 
-  <!-- Filter not working yet
   <div class="col-sm-4 offset-sm-4">
     <div class="btn-group pull-xs-right" role="group">
-      <a class="btn btn-secondary" ng-click="product.inStock = !product.inStock">Out of Stock</a>
-      <a class="btn btn-primary">In Stock</a>
+      <a class="btn btn-secondary" ng-click="inventory.outOfStockItems()">Out of Stock</a>
+      <a class="btn btn-primary" ng-click="inventory.inStockItems()">In Stock</a>
     </div>
-  </div> -->
+  </div>
 </div>
 
 <div ng-include src="'products/table.html'"></div>
