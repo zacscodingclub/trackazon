@@ -5,6 +5,12 @@ module ApplicationHelper
         <li class="nav-item">
           <a class="nav-link" ui-sref="inventory">Inventory</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" ui-sref="about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" ui-sref="contact">Contact</a>
+        </li>
       HTML
 
       html.html_safe
